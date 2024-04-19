@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Protest+Revolution&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="continer">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-row justify-content-around mb-3">
+                    <h1 class="company_name">Smoke-Null</h1>
+                    <div class="text-right">
+                        <button type="button" class="login_Btn" data-toggle="modal" data-target="#exampleModal">
+                            About
+                        </button>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" style="font-weight: bold;" id="exampleModalLabel">About</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="text-align: justify;">
+                                Welcome to our innovative project focused on developing an affordable tobacco detector using the ESP-32 Wi-Fi module and MQ-135 gas sensor. Our goal is to address the health risks associated with tobacco consumption in restricted areas by creating a low-cost, easily deployable solution. The evolution of our problem statement emphasizes the core objectives of efficient power consumption, affordability, real-time detection, prompt alert mechanisms, and promoting public health awareness.
+                                <br><br>
+                                Our methodology involves carefully selecting the MQ-135 gas sensor for its sensitivity to tobacco-related gases, calibrating the sensor for accuracy, and assembling the hardware components, including the ESP-32 and power supply. Strategic sensor placement indoors and setting precise gas concentration thresholds ensure effective tobacco detection. We've implemented an alert mechanism using the Twilio web service API to notify relevant authorities when thresholds are exceeded.
+                                <br><br>
+                                Thorough testing and optimization are conducted to guarantee reliable performance before deploying the system in target areas. Ongoing monitoring and maintenance ensure the long-term operation of our tobacco detector, contributing to the creation of healthier, smoke-free environments. Join us in our mission to make tobacco detection accessible and promote smoking cessation for improved public health outcomes.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <button class="login_Btn" src=""><a href="{% url 'login' %}">Login</buttom>
+                        <button class="login_Btn"><a href="{% url 'register' %}">Sign Up</buttom>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vid_container">
+
+        <video autoplay loop muted plays-inline class="background-clip">
+            <source src="{% static 'smoke.mp4' %}" type="video/mp4">
+        </video>
+
+        <div class="content">
+            <h1>Quit smoking<br> <span style="color: #FF4C29;">before</span> <br>smoking quits you</h1>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12  col-md-6">
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'black.png' %}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="corousel_content">
+                                    <h2 style="text-transform: uppercase; font-size: 26px;">Current Trends in Tobacco and Nicotine Product Usage</h2>
+                                    <ul class="corousel_list">
+                                        <li>E-cigarettes or other vape products - 70%</li>
+                                        <li>Cigarettes - 40.8%</li>
+                                        <li>Cigars or little cigars - 14.2%</li>   
+                                        <li>Water pipe or hookah - 9.3%</li> 
+                                        <li>Chewing or smokeless tobacco - 8.2%</li>
+                                        <li>Other - 4.1%</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'black.png' %}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="corousel_content">
+                                    <h2>EFFECTS OF SMOKING</h2>
+                                    <ul class="corousel_list">
+                                        <li>Associated with various cancers beyond the lungs.</li>
+                                        <li>Nicotine dependence leading to difficulty in quitting.</li>
+                                        <li>Non-smokers exposed face health risks.</li>
+                                        <li>Weakening of the immune system.</li>
+                                        <li>Pollution from production and disposal of cigarettes.</li>
+                                        <li>Accelerated skin aging and premature wrinkles.</li><br><br>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'black.png' %}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <div class="corousel_content">
+                                    <h5 style="text-transform: uppercase;">How do cigarettes affect body? <br> -By Ted - Ed</h5>
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe
+                                          class="embed-responsive-item"
+                                          src="https://www.youtube.com/embed/Y18Vz51Nkos?rel=0"
+                                          allowfullscreen
+                                        ></iframe>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="border: 2px #000000 solid;">
+                            <img src="{% static 'stack.png' %}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 style="color: #ffffff;" >Third slide label</h5>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="artical_card">
+                    <img src="{% static 'smoking.jpg' %}" class="artical_img">
+                    <h5 style="text-transform: uppercase; font-weight: bold; font-size: 26px; padding-top: 10px;">Cigarette Smoking's Impact</h5>
+                    <p>According to the Centers for Disease Control and Prevention (CDC), one in five deaths in the US every year will be due to smoking. This translates to more than 480,000 deaths every year.</p>
+                    <a href="https://1and1life.medium.com/the-effects-of-cigarette-smoking-and-copd-awareness-month-e109b976820f" target="_blank" style="text-decoration: none; color: #FF4C29;">Read More</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    
+    .corousel_list {
+        list-style-type: disc;
+        text-align: left;
+    }
+    .corousel_content{
+        color: #fff;
+        align-items: center;
+    }
+
+    .artical_card{
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 2px 5px 15px #000000;
+        text-align: center;
+    }
+
+    .artical_img{
+        width: 100%;
+        height: 170px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    .vid_container{
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content{
+        text-align: center;
+    }
+
+    .content h1{
+        font-family: "Protest Revolution", sans-serif;
+        font-size: 95px;
+        color: #fff;
+        margin-bottom: 50px;
+        text-transform: capitalize;
+        font-weight: normal;
+    }
+    .content span{
+        font-family: "Protest Revolution", sans-serif;
+        font-size: 95px;
+        color: #fff;
+        margin-bottom: 50px;
+        text-transform: capitalize;
+        font-weight: normal;
+    }
+
+    .background-clip{
+        position: absolute;
+        right: 0;
+        bottom: -1;
+        z-index: -1;
+    }
+
+    @media (min-aspect-ratio:16/9) {
+        .background-clip{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-aspect-ratio:16/9) {
+        .background-clip{
+            width: auto;
+            height: 100%;
+        }
+    }
+
+
+    .company_name{
+        font-size: 2.7rem;
+            font-family: "Teko", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 650;
+        font-style: normal;
+        color: #000000;
+        text-align: left;
+        text-shadow: 2px 2px 2px #acffa5;
+        padding-top: 5px;
+        padding-left: 0px;
+    }
+    .login_Btn{
+        background-color: transparent;
+        height: 36px;
+        color: #000000;
+        width: 120px;
+        font-family: sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        border-width: 0px;
+        text-align: right;
+        padding-top: 15px;
+        padding-right: 0px;
+    }
+    /**/
+    @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Protest+Revolution&display=swap')
+</style>
+</html>

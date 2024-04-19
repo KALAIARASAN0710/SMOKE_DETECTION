@@ -1,0 +1,98 @@
+<!-- templates/your_app/register.html -->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'styles1.css' %}">
+    <h1 style="text-align: center;">MyApp</h1>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.username.label_tag }} {{ form.username }}
+            {{ form.username.errors }}
+            <br>
+            {{ form.email.label_tag }} {{ form.email }}
+            {{ form.email.errors }}
+            <br>
+            {{ form.password1.label_tag }} {{ form.password1 }}
+            {{ form.password1.errors }}
+            <br>
+            {{ form.password2.label_tag }} {{ form.password2 }}
+            {{ form.password2.errors }}
+            <br>
+            <button type="submit">Register</button>
+        </form>
+        {% if form.errors %}
+            <p class="error-message">There was an error with your submission. Please check the form and try again.</p>
+        {% endif %}
+        <style>
+            /* static/myapp/styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+        </style>
+    </div>
+{% endblock %}

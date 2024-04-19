@@ -1,0 +1,198 @@
+<!-- templates/myapp/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <h2 style="padding: 15px;">Welcome, {{ account_holder_name }}!</h2>
+    <p style="padding-top: 10px; padding-left: 15px;">Details about the account holder go here.</p>
+    <h3 class="head-txt" style="padding-left: 15px;">Smoke Detection Frequencies</h3>
+    <div class="cards-container">
+        {% for frequency in frequencies %}
+            <div class="detect-card" style="margin-left: 15px;">
+                <div class="card">
+                    <video autoplay loop muted playinline class="background-clip">
+                        <source src="{% static 'vdeo.mp4' %}" type="video/mp4" />
+                    </video>
+                                
+                    <div class="card-values">
+                        <p class="text">Description: {{ frequency.Descp }}</p>
+                        {% if frequency.Descp != "Average" and frequency.Descp != "Total"%}
+                        <p class="text">Date: {{ frequency.date }}</p>
+                        {% endif %}
+                        <p class="text">Frequency: {{ frequency.frequency }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div> 
+    <div style="text-align: center; margin: 30px;">
+        <button class="view_Dash">
+            <a href="{% url 'urldata' %}" target="_blank" style="text-decoration: none; color: #000000;">View dashboard</a>
+        </button>
+    </div>
+    <style>
+        .view_Dash{
+            height: 36px;
+            width: 120px;
+            background-color: aquamarine;
+            border: solid 2px #000000;
+            border-radius: 5px;
+            font-family: "Oswald", sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .card {
+            font-family: "Roboto", sans-serif;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;  /* Optional: Adjust as needed */
+        }
+
+        .card video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: max-content;
+            top: 0;
+            left: -1;
+        }
+
+        .card .card-content {
+            padding: 24px;
+            padding-top: 100px;
+            z-index: 3;
+            position: relative;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
+        }
+
+        .card .card-content h3 {
+        font-size: 32px;
+        margin: 0;
+        color: #fff;
+        }
+
+        .card .card-content p {
+        color: #80ffdb;
+        }
+
+        .card .card-content a.btn {
+        background: #fff;
+        color: #222;
+        text-decoration: none;
+        padding: 8px 24px;
+        margin-top: 10px;
+        display: inline-block;
+        font-weight: bold;
+        transition: all 400ms ease;
+        }
+
+        .card .card-content a.btn:hover {
+        background: #80ffdb;
+        }
+
+        .background-clip{
+            position: absolute;
+            right: 0;
+            bottom: -1;
+            z-index: -1;
+        }
+
+        /**/
+        body{
+            width: 100%;
+            height: 100%;
+            
+        }
+        .detect-card{
+            width: 310px;
+            height: 175px;
+            background: transparent;
+            box-shadow: 0 8px 32px 0 rgba(41, 146, 160, 0.795);
+            backdrop-filter: blur( 4.5px );
+            -webkit-backdrop-filter: blur( 4.5px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            
+            position: relative;
+        }
+        
+        .text{
+        font-size: 26px;
+        font-family: "Teko", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        padding-top: 5px;
+        padding-left: 5px;
+        color: #fff;
+        
+        }
+        .card-values{
+            line-height: 0.8;
+        }
+        .head-txt{
+            font-size: 3.7rem;
+            font-family: "Teko", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 650;
+        font-style: normal;
+        color: #000000;
+        }
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    .vid_container{
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .content{
+        text-align: center;
+    }
+
+    
+
+    .background-clip{
+        position: absolute;
+        right: 0;
+        bottom: -1;
+        z-index: -1;
+    }
+
+    @media (min-aspect-ratio:16/9) {
+        .background-clip{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media (max-aspect-ratio:16/9) {
+        .background-clip{
+            width: auto;
+            height: 100%;
+        }
+    }
+        
+    </style>
+{% endblock %}
